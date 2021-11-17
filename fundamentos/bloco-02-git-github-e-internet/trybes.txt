@@ -2,8 +2,9 @@ O que eu vou aprender na Trybe:
 
 - Unix
 - Bash
+- HTML
+- CSS
 - Git
 - JS
 - React
-- HTML
-- CSS
+
