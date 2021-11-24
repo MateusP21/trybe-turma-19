@@ -1,0 +1,17 @@
+h1,
+p {
+  text-align: center;
+}
+
+ol:hover {
+  background-color: black;
+  color: greenyellow;
+}
+
+ol li:active {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
