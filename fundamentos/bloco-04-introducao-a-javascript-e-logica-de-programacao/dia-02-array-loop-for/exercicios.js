@@ -6,7 +6,7 @@ for (let index = 0; index < numbers.length; index++) {
   console.log(numbers[index]);
 }
 
-// Exercicio - 2
+Exercicio - 2;
 let resultado = 0;
 for (let index = 0; index < numbers.length; index++) {
   resultado += numbers[index];
@@ -23,3 +23,14 @@ console.log(media);
 media > 20
   ? console.log("Valor maior que 20")
   : console.log("Valor menor ou igual a 20");
+
+//Exercicio - 5
+let maiorValor = 0;
+for (let index = 0; index < numbers.length; index++) {
+  let currentNumber = numbers[index];
+  if (currentNumber > maiorValor) {
+    maiorValor = firstNumber;
+  }
+}
+
+console.log(maiorValor);
