@@ -52,3 +52,17 @@ for (let index = 0; index < numbers.length; index++) {
 }
 
 console.log(menorValor);
+
+//Exercicio - 8
+let arrayMax25 = [];
+for (let i = 1; i <= 25; i++) {
+  arrayMax25.push(i);
+}
+
+console.log(arrayMax25);
+
+//Exercicio - 9
+
+for (let i = 0; i < arrayMax25.length; i++) {
+  console.log(arrayMax25[i] / 2);
+}
