@@ -29,7 +29,7 @@ let maiorValor = 0;
 for (let index = 0; index < numbers.length; index++) {
   let currentNumber = numbers[index];
   if (currentNumber > maiorValor) {
-    maiorValor = firstNumber;
+    maiorValor = currentNumber;
   }
 }
 
@@ -41,3 +41,14 @@ for (number of numbers) {
 quantidadeNumerosImpares > 0
   ? console.log(quantidadeNumerosImpares)
   : console.log("nenhum valor ímpar encontrado");
+
+//Exercicio - 7
+let menorValor = numbers[0];
+for (let index = 0; index < numbers.length; index++) {
+  let currentNumber = numbers[index];
+  if (currentNumber < menorValor) {
+    menorValor = currentNumber;
+  }
+}
+
+console.log(menorValor);
