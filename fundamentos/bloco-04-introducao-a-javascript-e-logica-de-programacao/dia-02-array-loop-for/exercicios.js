@@ -6,7 +6,7 @@ for (let index = 0; index < numbers.length; index++) {
   console.log(numbers[index]);
 }
 
-Exercicio - 2;
+//Exercicio - 2;
 let resultado = 0;
 for (let index = 0; index < numbers.length; index++) {
   resultado += numbers[index];
@@ -33,4 +33,11 @@ for (let index = 0; index < numbers.length; index++) {
   }
 }
 
-console.log(maiorValor);
+//Exercicio - 6
+let quantidadeNumerosImpares = 0;
+for (number of numbers) {
+  number % 2 === 1 && quantidadeNumerosImpares++;
+}
+quantidadeNumerosImpares > 0
+  ? console.log(quantidadeNumerosImpares)
+  : console.log("nenhum valor ímpar encontrado");
