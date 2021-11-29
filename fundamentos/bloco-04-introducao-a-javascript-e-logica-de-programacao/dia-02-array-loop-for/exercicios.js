@@ -16,4 +16,10 @@ console.log(resultado);
 
 // Exercicio - 3
 
-console.log(resultado / numbers.length);
+const media = resultado / numbers.length;
+console.log(media);
+
+//Exercicio - 4
+media > 20
+  ? console.log("Valor maior que 20")
+  : console.log("Valor menor ou igual a 20");
