@@ -13,3 +13,7 @@ for (let index = 0; index < numbers.length; index++) {
 }
 
 console.log(resultado);
+
+// Exercicio - 3
+
+console.log(resultado / numbers.length);
