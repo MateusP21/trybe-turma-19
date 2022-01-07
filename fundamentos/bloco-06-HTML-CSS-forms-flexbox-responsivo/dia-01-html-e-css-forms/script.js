@@ -7,7 +7,7 @@ const button = document.getElementById("submit-button")
 
 function verifyForm() {
 
-  let errors = 0
+  let fails = 0
   const data = {
     name: { element: document.getElementById('name'), maxLength: 40 },
     email: { element: document.getElementById('email'), maxLength: 50 },
@@ -26,25 +26,32 @@ function verifyForm() {
 
   //TextArea
   resumo.element.value === '' ?
-    alert(`O campo 'resumo' está vazio`) :
+    fails++ && alert(`O campo 'resumo' está vazio`) :
     resumo.element.value.length >= resumo.maxLength
-    && alert(`O campo 'resumo' excedeu o limite máximo de caracteres`)
+    && fails++ && alert(`O campo 'resumo' excedeu o limite máximo de caracteres`)
 
   //Verificando inputs do tipo text
   for (inputText in data) {
     if (data[inputText]['element'].getAttribute('type') === 'text') {
       data[inputText]['element'].value === ''
-        ? alert(`O campo '${inputText}' está vazio`)
+        ? fails++ && alert(`O campo '${inputText}' está vazio`)
         : data[inputText]['element'].value.length >= data[inputText]['maxLength']
-        && alert(`O campo '${inputText}' excedeu o limite máximo de caracteres`)
+        && fails++ && alert(`O campo '${inputText}' excedeu o limite máximo de caracteres`)
     }
   }
 
   //Verificando Radios
   if (casaRadio.element.checked === false && apartamentoRadio.element.checked === false) {
     alert("Por favor selecione uma das opções: 'Casa', 'Apartamento'")
+    fails++
   }
 
+  //Verificando Select 
+
+  if (!estado.value) {
+    alert('Selecione um estado')
+    fails++
+  }
 
 
 
@@ -52,7 +59,9 @@ function verifyForm() {
 
 function formSubmit(e) {
   e.preventDefault()
-  verifyForm()
+  if (verifyForm()) {
+    showResult()
+  }
   verifyDate()
 }
 
@@ -104,7 +113,7 @@ function verifyDate() {
 
 }
 
-function dataDetails() {
+function showResult() {
   const div = document.createElement('div')
 }
 window.onload = () => {
