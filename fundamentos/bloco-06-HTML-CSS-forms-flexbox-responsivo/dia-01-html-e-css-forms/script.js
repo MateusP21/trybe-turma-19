@@ -19,10 +19,11 @@ function verifyForm() {
     resumo: { element: document.getElementById('resumo'), maxLength: 1000 },
     estado: { element: document.getElementById('estado'), },
     cargo: { element: document.getElementById('cargo'), maxLength: 40 },
-    descricaoCargo: { element: document.getElementById('descricao-cargo'), maxLength: 500 }
+    descricaoCargo: { element: document.getElementById('descricao-cargo'), maxLength: 500 },
+    dataInicio: { element: document.getElementById('data-inicio') }
   }
 
-  const { resumo, casaRadio, apartamentoRadio } = data
+  const { resumo, casaRadio, apartamentoRadio, name, cpf, endereco, cidade, estado, dataInicio, cargo, descricaoCargo } = data
 
   //TextArea
   resumo.element.value === '' ?
@@ -53,16 +54,35 @@ function verifyForm() {
     fails++
   }
 
+  //Verificando data
 
+  if (!verifyDate(dataInicio.element.value)) fails++
+
+  if (!fails) {
+
+    const formattedData = {
+      name: name.element.value,
+      email: email.element.value,
+      cpf: cpf.element.value,
+      endereco: endereco.element.value,
+      cidade: cidade.element.value,
+      estado: estado.element.value,
+      cargo: cargo.element.value,
+      descricaoCargo: descricaoCargo.element.value,
+      resumo: resumo.element.value,
+      apartamentoRadio: apartamentoRadio.element.checked || false,
+      descricaoCargo: apartamentoRadio.element.checked || false,
+      dataInicio: dataInicio.element.value
+    }
+
+    showResult(formattedData)
+  }
 
 }
 
 function formSubmit(e) {
   e.preventDefault()
-  if (verifyForm()) {
-    showResult()
-  }
-  verifyDate()
+  verifyForm()
 }
 
 function generateStates() {
@@ -97,23 +117,34 @@ function generateStates() {
   })
 }
 
-function verifyDate() {
-  const dataArray = dataInicio.value.split("/")
-  const dia = parseInt(dataArray[0])
-  const mes = parseInt(dataArray[1])
-  const ano = parseInt(dataArray[2])
+function verifyDate(date) {
+  const fails = 0
+  const dateArray = dataInicio.value.split("/")
+  const dia = parseInt(dateArray[0])
+  const mes = parseInt(dateArray[1])
+  const ano = parseInt(dateArray[2])
 
   if (dia < 0 || dia > 31) {
     alert('Dia inválido')
+    fails++
   } else if (mes < 0 || mes > 12) {
     alert('Mes Invalido')
+    fails++
   } else if (ano < 0) {
     alert('Ano inválido')
+    fails++
+  }
+
+  if (!fails) {
+    return true
+  } else {
+    return false
   }
 
 }
 
-function showResult() {
+function showResult(data) {
+  console.log(data)
   const div = document.createElement('div')
 }
 window.onload = () => {
