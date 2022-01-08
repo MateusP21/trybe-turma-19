@@ -15,45 +15,100 @@
     <form>
       <fieldset>
         <label for="name">
-          Nome:
-          <input type="text" name="name" id="name" maxlength="40" required>
+          <div class="data-container">
+            Nome:
+            <input type="text" name="name" id="name" maxlength="40" required>
+            <span id="message">O campo está vazio</span>
+          </div>
+
+
         </label>
+
+
+
         <label for="email">
-          Email:
-          <input type="email" name="email" id="email" maxlength="50" required>
+          <div class="data-container">
+            Email:
+            <input type="email" name="email" id="email" maxlength="50" required>
+          </div>
+
         </label>
         <label for="cpf">
-          CPF:
-          <input type="text" name="cpf" id="cpf" maxlength="11" required>
+          <div class="data-container">
+            CPF:
+            <input type="text" name="cpf" id="cpf" maxlength="11" required>
+          </div>
+
         </label>
         <label for="endereco">
-          Endereço:
-          <input type="text" name="endereco" id="endereco" maxlength="200" required>
+          <div class="data-container">
+            Endereço:
+            <input type="text" name="endereco" id="endereco" maxlength="200" required>
+          </div>
+
         </label>
         <label for="cidade">
-          Cidade:
-          <input type="text" name="cidade" id="cidade" maxlength="28" required>
+          <div class="data-container">
+            Cidade:
+            <input type="text" name="cidade" id="cidade" maxlength="28" required>
+          </div>
+
         </label>
-        <select name="estado" id="estado" required></select>
+        <div class="data-container">
+          <select name="estado" id="estado" required>
+            <option value="" disabled selected hidden>Selecione um Estado</option>
+          </select>
+        </div>
 
-        <label for="casa"> <input type="radio" name="casa" id="casa"> Casa</label>
 
-        <label for="apartamento"><input type="radio" name="apartamento" id="apartamento"> Apartamento</label>
+        <label for="casa">
+          <div class="data-container">
+            <div class="radio">
+              <input type="radio" name="casa" id="casa"> Casa
+            </div>
+
+          </div>
+        </label>
+
+        <label for="apartamento">
+          <div class="data-container">
+            <div class="radio">
+              <input type="radio" name="apartamento" id="apartamento"> Apartamento
+            </div>
+
+          </div>
+        </label>
+
       </fieldset>
 
       <fieldset>
-        <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" required></textarea>
+        <label for="resumo">
+          Resumo do Currículo:
+          <div class="data-container">
+            <textarea name="resumo" id="resumo" cols="30" rows="10" maxlength="1000" required></textarea>
+
+          </div>
+        </label>
         <label for="cargo">
-          Cargo:
-          <input type="text" name="cargo" id="cargo" maxlength="40" required>
+          <div class="data-container">
+            Cargo:
+            <input type="text" name="cargo" id="cargo" maxlength="40" required>
+          </div>
+
         </label>
         <label for="descricao-cargo">
-          Descrição do cargo:
-          <input type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500" required>
+          <div class="data-container">
+            Descrição do cargo:
+            <input type="text" name="descricao-cargo" id="descricao-cargo" maxlength="500" required>
+          </div>
+
         </label>
         <label for="data-inicio">
-          Data de Inicio:
-          <input type="text" name="data-inicio" id="data-inicio" required>
+          <div class="data-container">
+            Data de Inicio:
+            <input type="text" name="data-inicio" id="data-inicio" required>
+          </div>
+
         </label>
       </fieldset>
       <button type="submit" id="submit-button">Enviar</button>

@@ -1,7 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -19,10 +27,58 @@ form {
   flex-direction: column;
   border: 1px solid rgb(255, 255, 255);
   padding: 1rem;
+  width: 600px;
 }
 
 fieldset {
   border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#message {
+  font-size: 0.85rem;
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+  border: 1px solid rgb(248, 89, 89);
+  background-color: rgb(250, 224, 224);
+  padding: 6px;
+  max-width: max-content;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+
+input {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+  border: 1px solid rgb(230, 230, 230);
+  border-radius: 4px;
+  padding: 8px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+textarea {
+  resize: none;
+  padding: 4px;
+  border: 1px solid rgb(230, 230, 230);
+}
+
+button {
+  padding: 8px;
+  background-color: rgb(2, 180, 2);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.data-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
