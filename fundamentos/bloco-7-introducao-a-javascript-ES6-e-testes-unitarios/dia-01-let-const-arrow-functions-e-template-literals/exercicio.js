@@ -1,3 +1,6 @@
+//EXERCICIO 1
+
+//PARTE I
 const testingScope = (escopo) => {
   if (escopo === true) {
     let ifScope = "Não devo ser utilizada fora do meu escopo (if)";
@@ -25,14 +28,29 @@ console.log(
 
 //EXERCICIO 2
 
+//PARTE I
 const fatorial = (n) => {
   let total = 1;
   for (let i = 0; i < n; i++) {
     let atual = n - i;
     total *= atual;
   }
-
   console.log(total);
 };
 
 fatorial(4);
+
+// PARTE 2
+
+const longestWord = (frase) => {
+  const arrayDePalavras = frase.split(" ");
+  let maiorPalavra = 0;
+  let palavraEscolhida = "";
+  arrayDePalavras.forEach(
+    (palavra) => palavra.length > maiorPalavra && (palavraEscolhida = palavra)
+  );
+
+  console.log(palavraEscolhida);
+};
+
+longestWord("Antônio foi no banheiro e não sabemos o que aconteceu");
