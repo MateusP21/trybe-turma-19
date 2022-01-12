@@ -10,7 +10,25 @@
 
 <body>
 
+  <h2>Numero de cliques: </h2>
+
+  <button>Clique aqui!</button>
+
   <script>
+    let clickCount = 0
+    const button = document.querySelector('button')
+    const h2 = document.querySelector('h2')
+    const h1 = document.createElement('h1')
+    h1.innerText = clickCount
+    h2.appendChild(h1)
+
+
+    function renderCount() {
+      clickCount++
+      h1.innerText = clickCount
+    }
+    button.addEventListener("click", renderCount)
+
 
 
   </script>
