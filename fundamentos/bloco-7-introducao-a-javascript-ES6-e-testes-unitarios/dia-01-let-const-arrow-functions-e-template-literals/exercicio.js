@@ -54,3 +54,22 @@ const longestWord = (frase) => {
 };
 
 longestWord("Antônio foi no banheiro e não sabemos o que aconteceu");
+
+//EXERCICIO 4
+const skills = ["Javascript", "HTML", "CSS", "React", "Linux"];
+const trocaDePalavra = (palavra) => {
+  const stringDeterminada = "Tryber x aqui!".split(" ");
+
+  for (let i = 0; i < stringDeterminada.length; i++) {
+    stringDeterminada[i].toLowerCase() === "x" &&
+      (stringDeterminada[i] = palavra);
+  }
+
+  return stringDeterminada.join(" ");
+};
+
+const concatenaSkills = (string) => {
+  return `${string} Minhas cinco principais habilidades são: ${skills}`;
+};
+
+console.log(concatenaSkills(trocaDePalavra("bebeto")));
