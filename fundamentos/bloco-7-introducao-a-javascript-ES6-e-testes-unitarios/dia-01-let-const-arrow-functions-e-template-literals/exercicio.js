@@ -22,3 +22,17 @@ oddsAndEvens.sort((a, b) => a - b);
 console.log(
   `Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`
 ); // será necessário alterar essa linha 😉
+
+//EXERCICIO 2
+
+const fatorial = (n) => {
+  let total = 1;
+  for (let i = 0; i < n; i++) {
+    let atual = n - i;
+    total *= atual;
+  }
+
+  console.log(total);
+};
+
+fatorial(4);
