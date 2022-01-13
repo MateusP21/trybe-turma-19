@@ -22,6 +22,10 @@
       if (v1 === '' || v2 === '') {
         throw new Error("o campo está em branco.")
       }
+
+      if (isNaN(v1) || isNaN(v2)) {
+        throw new Error("o valor especificado não é um numero")
+      }
     }
     function sum() {
       const value1 = document.getElementById('value1').value;
@@ -34,10 +38,12 @@
       } catch (e) {
         const result = e.message
         document.getElementById('result').innerHTML = `Resultado: ${result}`;
+      } finally {
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
       }
 
-      document.getElementById('value1').value = '';
-      document.getElementById('value2').value = '';
+
     }
     window.onload = () => {
       const button = document.getElementById('button');
