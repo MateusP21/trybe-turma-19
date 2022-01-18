@@ -14,3 +14,17 @@ const showEmploye = (personName) => {
   };
 };
 newEmployees(showEmploye);
+
+const sorteio = (numeroApostado, checaSorteio) => {
+  if (numeroApostado === checaSorteio(numeroApostado)) {
+    return 'Parabéns você ganhou';
+  }
+
+  return 'Tente novamente';
+};
+
+const checaSorteio = (numero) => {
+  return Math.floor(Math.random() * numero) + 1;
+};
+
+console.log(sorteio(5, checaSorteio));
