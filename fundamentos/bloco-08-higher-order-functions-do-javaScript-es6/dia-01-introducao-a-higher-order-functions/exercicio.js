@@ -28,3 +28,30 @@ const checaSorteio = (numero) => {
 };
 
 console.log(sorteio(5, checaSorteio));
+
+//EXERCICIO 3
+
+const RIGHT_ANSWERS = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
+const STUDENT_ANSWERS = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
+
+const correcaoDaProva = (questao, resposta) => {
+  let total = 0;
+  if (questao === resposta) {
+    total += 1;
+  } else if (resposta !== 'N.A' && questao !== resposta) {
+    total -= 0.5;
+  }
+
+  return total;
+};
+
+const provaDaEscola = (gabarito, respostaAluno, correcao) => {
+  let notaFinal = 0;
+  gabarito.forEach((item, index) => {
+    notaFinal += correcao(item, respostaAluno[index]);
+  });
+
+  console.log(notaFinal);
+};
+
+provaDaEscola(RIGHT_ANSWERS, STUDENT_ANSWERS, correcaoDaProva);
