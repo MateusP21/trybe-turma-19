@@ -32,12 +32,12 @@ function getPokemonDetails(filter, callback) {
 }
 
 getPokemonDetails(
-  (pokemon) => pokemon.name === 'Bulba1saur',
+  (pokemon) => pokemon.name === 'Bulbasaur',
   (error, message) => {
     if (error) {
-      console.log(error);
+      return error;
     } else {
-      console.log(message);
+      return message;
     }
   }
 );
